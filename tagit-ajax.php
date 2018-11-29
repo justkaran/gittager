@@ -10,8 +10,9 @@ if (isset($_POST['create'])) {
     $tags = trim($_POST['tags']);
     $user = trim($_POST['user']);
     $url = trim($_POST['url']);
+    $note = trim($_POST['notes']);
 
-        $sql = "INSERT INTO gits (created, user, url) VALUES (NOW(), '{$user}', '{$url}')";
+        echo $sql = "INSERT INTO gits (created, user, url, note) VALUES (NOW(), '{$user}', '{$url}', '{$note}')";
         if (mysqli_query($conn, $sql)) {
             $id = mysqli_insert_id($conn);
         } else {

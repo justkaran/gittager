@@ -4,6 +4,7 @@ $(document).ready(function(){
         var tags = $('#tags').val();
         var user = $(this).data( "usr" );
         var url = $(this).data( "url" );
+        var notes = $('#notes').val();
         $.ajax({
             url: 'tagit-ajax.php',
             type: 'POST',
@@ -12,6 +13,7 @@ $(document).ready(function(){
                 'tags': tags,
                 'user': user,
                 'url': url,
+                'notes': notes,
             },
             success: function(response){
                 document.getElementById('maincontent').innerHTML = "<i class=\"fas fa-check\"></i> TAGs successfully saved <a href='javascript:window.close();'>close window</a>";

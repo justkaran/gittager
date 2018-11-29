@@ -8,7 +8,7 @@ if (!$conn) {
     die('Connection failed ' . mysqli_error($conn));
 }
 
-$sql = "SELECT G.id, G.user, G.url, GROUP_CONCAT(T.tag) AS tags FROM gits G LEFT JOIN tags T ON T.git = G.id  WHERE G.user = ".$_SESSION['userData']['oauth_uid']." GROUP BY T.git";
+$sql = "SELECT G.id, G.user, G.url, GROUP_CONCAT(T.tag) AS tags, G.note FROM gits G LEFT JOIN tags T ON T.git = G.id  WHERE G.user = ".$_SESSION['userData']['oauth_uid']." GROUP BY T.git";
 
 $res = mysqli_query($conn, $sql);
 
@@ -35,42 +35,8 @@ $urls = array_map(function($item) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="author" content="Denis Samardjiev" />
-    <meta name="description" content="Particles - Personal + Agency Template">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Particles - Personal + Agency Template</title>
+    <?php include('views/meta.php');?>
 
-    <!-- Royal Preloader CSS -->
-    <link href="css/royal_preloader.css" rel="stylesheet">
-
-    <!-- jQuery Files -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
-    <!-- Parallax File -->
-    <script type="text/javascript" src="js/parallax.min.js"></script>
-
-    <!-- Royal Preloader -->
-    <script type="text/javascript" src="js/royal_preloader.min.js"></script>
-    <script type="text/javascript">
-        Royal_Preloader.config({
-            mode:           'number',
-            showProgress:   false,
-            background:     '#1d1d1d'
-        });
-    </script>
-
-    <!-- Stylesheets -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/ionicons.min.css" rel="stylesheet">
-    <link href="css/pe-icon-7-stroke.css" rel="stylesheet">
-    <link href="css/magnific-popup.css" rel="stylesheet">
-    <link href="css/logoiconfont.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet" title="main-css">
-
-    <!-- Alternate Stylesheets / choose what color and base you want and include the 2 files regularly AFTER style.css above -->
-    <link rel="alternate stylesheet" type="text/css" href="css/colors/blue.css" title="main-css">
-    <link rel="alternate stylesheet" type="text/css" href="css/base-light.css" title="main-css">
 </head>
 <body class="royal_preloader" data-spy="scroll" data-target=".navbar" data-offset="70">
 <div id="royal_preloader"></div>
@@ -89,7 +55,7 @@ $urls = array_map(function($item) {
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand scroll-link" href="#home" data-id="home"><span class="logo"><img src="images/gittager-logo.png" style="max-height: 4rem;"/></span></a>
+                    <a class="navbar-brand" href="index.php#home" data-id="home"><span class="logo"><img src="images/gittager-logo.png" style="max-height: 4rem;"/></span></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -152,7 +118,20 @@ $urls = array_map(function($item) {
                             }
                             echo '
                           <button type="button" class="btn btn-primary btn-sm btn_del" data-id="'.$row['id'].'" style="float:right;margin-left: 1rem;"><i class="fas fa-trash"></i> delete</button> 
-                          <a href="'.$row['url'].'" target="_blank" style="float:right;"><button type="button" class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt"></i> open</button></a>
+                          <a href="'.$row['url'].'" target="_blank" style="float:right;margin-left: 1rem;"><button type="button" class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt"></i> open</button></a>
+                          <button class="btn btn-primary btn-sm" type="button" data-toggle="collapse" data-target="#collapseNotes'.$row['id'].'" aria-expanded="false" aria-controls="collapseNotes'.$row['id'].'" style="float: right;margin-left: 1rem;"';
+                            if ($row['note'] == '') echo ' disabled';
+                    echo '>
+                        show notes
+                        </button>
+
+                    <div class="collapse" id="collapseNotes'.$row['id'].'" style="width: 100%;margin-top: 3.6rem;">
+                            <div class="panel panel-primary">
+                            <div class="panel-body">
+                            '.$row['note'].'
+                            </div>
+                            </div>
+                    </div>
                         </div>';
 
                         }
@@ -263,5 +242,6 @@ $urls = array_map(function($item) {
 <script type="text/javascript" src="js/style-switcher.js"></script><!-- Remove for production -->
 <script type="text/javascript" src="js/main.js"></script>
 <textarea id="bookmarklettext" style="position: absolute; left: -9999px;">javascript: link="http://www.gittager.com/tagit.php?permalink=" + document.getElementById('js-copy-permalink').value.replace("#", "***") + "&titel=" + document.querySelector("meta[property='og:title']").getAttribute("content"); meinpopup=open(link,'_blank','width=605,height=555'); meinpopup.focus(); void(0);</textarea>
+<script src="js/tagit.js"></script>
 </body>
 </html>

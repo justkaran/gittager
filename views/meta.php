@@ -1,3 +1,28 @@
+<meta charset="utf-8"/>
+<meta name="author" content="CodeDoor.org" />
+<meta name="description" content="Gittager">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>GitTager</title>
+
+<!-- Royal Preloader CSS -->
+<link href="css/royal_preloader.css" rel="stylesheet">
+
+<!-- jQuery Files -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<!-- Parallax File -->
+<script type="text/javascript" src="js/parallax.min.js"></script>
+
+<!-- Royal Preloader -->
+<script type="text/javascript" src="js/royal_preloader.min.js"></script>
+<script type="text/javascript">
+    Royal_Preloader.config({
+        mode:           'number',
+        showProgress:   false,
+        background:     '#1d1d1d'
+    });
+</script>
+
 <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="icons/apple-icon-72x72.png">
@@ -11,13 +36,17 @@
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
-<link rel="manifest" href="icons/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
-<!-- Bootstrap core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,800" rel="stylesheet">
+<!-- Stylesheets -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/ionicons.min.css" rel="stylesheet">
+<link href="css/pe-icon-7-stroke.css" rel="stylesheet">
+<link href="css/magnific-popup.css" rel="stylesheet">
+<link href="css/logoiconfont.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet" title="main-css">
+
+<!-- Alternate Stylesheets / choose what color and base you want and include the 2 files regularly AFTER style.css above -->
+<link rel="alternate stylesheet" type="text/css" href="css/colors/blue.css" title="main-css">
+<link rel="alternate stylesheet" type="text/css" href="css/base-light.css" title="main-css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117531428-6"></script>

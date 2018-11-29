@@ -90,42 +90,7 @@ if(isset($accessToken)){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="author" content="Denis Samardjiev" />
-    <meta name="description" content="Particles - Personal + Agency Template">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Particles - Personal + Agency Template</title>
-
-    <!-- Royal Preloader CSS -->
-    <link href="css/royal_preloader.css" rel="stylesheet">
-
-    <!-- jQuery Files -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
-    <!-- Parallax File -->
-    <script type="text/javascript" src="js/parallax.min.js"></script>
-
-    <!-- Royal Preloader -->
-    <script type="text/javascript" src="js/royal_preloader.min.js"></script>
-    <script type="text/javascript">
-        Royal_Preloader.config({
-            mode:           'number',
-            showProgress:   false,
-            background:     '#1d1d1d'
-        });
-    </script>
-
-    <!-- Stylesheets -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/ionicons.min.css" rel="stylesheet">
-    <link href="css/pe-icon-7-stroke.css" rel="stylesheet">
-    <link href="css/magnific-popup.css" rel="stylesheet">
-    <link href="css/logoiconfont.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet" title="main-css">
-
-    <!-- Alternate Stylesheets / choose what color and base you want and include the 2 files regularly AFTER style.css above -->
-    <link rel="alternate stylesheet" type="text/css" href="css/colors/blue.css" title="main-css">
-    <link rel="alternate stylesheet" type="text/css" href="css/base-light.css" title="main-css">
+    <?php include('views/meta.php');?>
 </head>
 <body class="royal_preloader" data-spy="scroll" data-target=".navbar" data-offset="70">
 <div id="royal_preloader"></div>
@@ -242,7 +207,7 @@ if(isset($accessToken)){
                         <div class="process-content">
                             <div><span class="process-icons pe-7s-map-marker"></span></div>
                             <h2 class="mt15 mb20">Tag best practise<br>source code on github</h2>
-                            <p class="no-margin">Tag all best practise source codes you find to collect them in your gittager.</p>
+                            <p class="no-margin">Tag all best practise source codes you find to collect them on your gittager.</p>
                         </div>
                     </div><!-- /.animation -->
                 </div><!-- /.column -->
