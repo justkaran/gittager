@@ -138,7 +138,7 @@ if(isset($accessToken)){
         <div class="center-vertically">
             <div class="col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3 text-center">
                 <h1 class="scaleReveal" style="font-size: 4rem;">
-                    <strong>Find and remember</strong> <br/>the best source code on github.
+                    <strong>Your collections of annotated</strong> <br/> code on GitHub.
                 </h1>
                 <hr class="bottomReveal">
                 <?php echo $output; ?>
@@ -160,7 +160,7 @@ if(isset($accessToken)){
                     <h2 class="no-margin rotateLeftReveal">Hello.</h2>
                 </div>
                 <div class="col-lg-10 col-sm-9 mt30-xs">
-                    <h3 class="no-margin rightReveal">You are looking for the best source code on github? You are looking for a way to remember what you found on github. <strong>Gittager is your tool!</strong></h3>
+                    <h3 class="no-margin rightReveal">Gittager lets you easily annotate your code and earn money doing so. <strong> Join us now.</strong></h3>
                 </div>
             </div><!-- /.row -->
         </div><!-- /.container -->
@@ -193,7 +193,7 @@ if(isset($accessToken)){
                         <div class="process-content">
                             <div><span class="process-icons pe-7s-link"></span></div>
                             <h2 class="mt15 mb20">Install<br>Bookmarklet</h2>
-                            <p class="no-margin">Install GitTager bookmarklet for easy taging. <button id="bmcopy" class="btn btn-default btn-sm" style="margin-top: 1rem;" data-toggle="tooltip" data-placement="top" title="copied bookmarklet to clipboard"><span class="ion-ios-copy"></span> copy bookmarklet</button></p>
+                            <p class="no-margin">Install GitTager bookmarklet for easy taging and annotation. <button id="bmcopy" class="btn btn-default btn-sm" style="margin-top: 1rem;" data-toggle="tooltip" data-placement="top" title="copied bookmarklet to clipboard"><span class="ion-ios-copy"></span> copy bookmarklet</button></p>
                         </div>
                     </div><!-- /.animation -->
                 </div><!-- /.column -->
@@ -202,12 +202,12 @@ if(isset($accessToken)){
                         <div class="process-intro">
                             <h3 class="process-number">02</h3>
                             <div><span class="process-icons pe-7s-map-marker rotateBottomReveal"></span></div>
-                            <h2>Tag best practise<br>source code on github</h2>
+                            <h2>Tag best practise<br>source code on GitHub</h2>
                         </div>
                         <div class="process-content">
                             <div><span class="process-icons pe-7s-map-marker"></span></div>
-                            <h2 class="mt15 mb20">Tag best practise<br>source code on github</h2>
-                            <p class="no-margin">Tag all best practise source codes you find to collect them on your gittager.</p>
+                            <h2 class="mt15 mb20">Tag and annotate <br>source code on GitHub</h2>
+                            <p class="no-margin">Tag all the best practise source code you find and collect them on your gittager profile.</p>
                         </div>
                     </div><!-- /.animation -->
                 </div><!-- /.column -->
@@ -216,12 +216,12 @@ if(isset($accessToken)){
                         <div class="process-intro">
                             <h3 class="process-number">03</h3>
                             <div><span class="process-icons pe-7s-share rotateBottomReveal"></span></div>
-                            <h2>Find all your (and others) Tags<br>in GitTager</h2>
+                            <h2>Earn money with your tags and annotations <br>on GitTager</h2>
                         </div>
                         <div class="process-content">
                             <div><span class="process-icons pe-7s-share"></span></div>
-                            <h2 class="mt15 mb20">Find all your (and others) Tags<br>in GitTager</h2>
-                            <p class="no-margin">Use your collection of best practise source codes or search in others tags collections.</p>
+                            <h2 class="mt15 mb20">Later earn money with your own annotations<br>on GitTager</h2>
+                            <p class="no-margin">We are building up community at this time. When enough people use the Gittager you will be able to earn. Use your collections of code annotations and earn everytime another user clicks on your annotations.</p>
                         </div>
                     </div><!-- /.animation -->
                 </div><!-- /.column -->
@@ -274,6 +274,28 @@ if(isset($accessToken)){
 
 <!-- Javascript Files -->
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArLNT3t4qsJEBmR0R9P_6ueLIQz0Jvt1M&callback=initMap" async defer></script>
+<script type="text/javascript">
+    /* ---- Google Maps ---- */
+    function initMap() {
+        var mapOptions = {
+            zoom: 15,
+            zoomControl: false,
+            scaleControl: false,
+            scrollwheel: false,
+            disableDoubleClickZoom: true,
+            center: new google.maps.LatLng(40.6700, -73.9400), // New York
+            styles: [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]
+        };
+        var mapElement = document.getElementById('map');
+        var map = new google.maps.Map(mapElement, mapOptions);
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(40.6700, -73.9400),
+            map: map,
+            title: 'Our Office!'
+        });
+    }
+</script>
 <script type="text/javascript" src="js/particles.min.js"></script>
 <script type="text/javascript" src="js/particlesRun.js"></script>
 <script type="text/javascript" src="js/jquery.mixitup.js"></script>
