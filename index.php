@@ -73,7 +73,7 @@ if(isset($accessToken)){
         $output = '<h3 style="color:red">Some problem occurred, please try again.</h3>';
     }
 
-    header('Location: ./edit.php');
+    header('Location: ./tags.php');
 }else{
     // Generate a random hash and store in the session for security
     $_SESSION['state'] = hash('sha256', microtime(TRUE) . rand() . $_SERVER['REMOTE_ADDR']);
@@ -91,7 +91,7 @@ if(isset($accessToken)){
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-    <title>CDDR Advisor</title>
+    <title>GitTager</title>
     <meta charset="utf-8">
     <?php include('views/meta.php');?>
 </head>
