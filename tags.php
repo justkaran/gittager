@@ -32,106 +32,236 @@ $urls = array_map(function($item) {
 */
 
 ?>
-
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
-    <title>GitTager</title>
-    <meta charset="utf-8">
-    <?php include('views/meta.php');?>
-    <!-- Custom styles for this template -->
-    <?php if (isset($_SESSION['userData']['username'])) {
-        /*echo '<script type="text/javascript">
-        mixpanel.register({
-            "username": "' . $_SESSION['userData']['username'] . '",
-            "email": "' . $_SESSION['userData']['email'] . '"
+    <meta charset="utf-8"/>
+    <meta name="author" content="Denis Samardjiev" />
+    <meta name="description" content="Particles - Personal + Agency Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Particles - Personal + Agency Template</title>
+
+    <!-- Royal Preloader CSS -->
+    <link href="css/royal_preloader.css" rel="stylesheet">
+
+    <!-- jQuery Files -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <!-- Parallax File -->
+    <script type="text/javascript" src="js/parallax.min.js"></script>
+
+    <!-- Royal Preloader -->
+    <script type="text/javascript" src="js/royal_preloader.min.js"></script>
+    <script type="text/javascript">
+        Royal_Preloader.config({
+            mode:           'number',
+            showProgress:   false,
+            background:     '#1d1d1d'
         });
-        mixpanel.identity("'.$_SESSION['userData']['oauth_uid'].'");
-        mixpanel.alias("' . $_SESSION['userData']['username'] . '");
-        mixpanel.people.set_once({
-            "user_id": "' . $_SESSION['userData']['username'] . '",
-            "email": "' . $_SESSION['userData']['email'] . '",
-            "first_name": "' . $_SESSION['userData']['name'] . '"
-        });
-    </script>';*/
-    }
-    ?>
+    </script>
+
+    <!-- Stylesheets -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/ionicons.min.css" rel="stylesheet">
+    <link href="css/pe-icon-7-stroke.css" rel="stylesheet">
+    <link href="css/magnific-popup.css" rel="stylesheet">
+    <link href="css/logoiconfont.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" title="main-css">
+
+    <!-- Alternate Stylesheets / choose what color and base you want and include the 2 files regularly AFTER style.css above -->
+    <link rel="alternate stylesheet" type="text/css" href="css/colors/blue.css" title="main-css">
+    <link rel="alternate stylesheet" type="text/css" href="css/base-light.css" title="main-css">
 </head>
-<body id="page-top">
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container startpage">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <?php include('views/nav.php');?>
-            <!-- Display login button / GitHub profile information -->
-            <li class="nav-link"><?php echo $output1; ?></li>
-        </div>
-    </div>
-</nav>
+<body class="royal_preloader" data-spy="scroll" data-target=".navbar" data-offset="70">
+<div id="royal_preloader"></div>
 
-<section id="about" style="box-shadow: 0px 0px 4px #ccc; padding-top: 100px;">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 mx-auto" style="background: #fff;box-shadow: 0px 0px 4px #ccc; padding-top: 1rem;border-radius: 4px;">
-                <?php echo '<h3>Hi '.$_SESSION['userData']['username'].'</h3>'; ?>
+<!-- Begin Header -->
+<header>
+    <!-- Begin Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand scroll-link" href="#home" data-id="home"><span class="logo"><img src="images/gittager-logo.png" style="max-height: 4rem;"/></span></a>
+                </div>
 
-                <?php
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <?php include('views/nav.php');?>
+                        <li><?php echo $output1; ?></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+        </div><!-- /.container-fluid -->
+    </nav>
+    <!-- End Navigation -->
+</header>
+<!-- End Header -->
 
-                echo '';
+<!-- Begin Intro -->
+<section id="ideology">
 
-                echo '</div>
-                            <div class="col-lg-6 mx-auto" style="background: #00b7ec;box-shadow: 0px 0px 4px #ccc; padding-top: 1rem; color:white; font-weight:bold; border-radius: 4px;">
-                            </div>
-                        <div class="col-lg-12 text-center">
-                            &nbsp;
-                        </div>
+    <!-- Begin Our Process Title -->
+    <div id="our-process-title" class="pt30 pb30">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h4 class="no-margin">Your current tags</h4>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- /.div -->
+    <!-- End Our Process Title -->
 
-                    <div class="col-lg-12 mx-auto" style="background: #fff;box-shadow: 0px 0px 4px #ccc; padding-top: 1rem;border-radius: 4px;">';
 
-                //var_dump($res);
+        <div class="container">
+            <div class="row">
+                <!-- column -->
+                <div class="col-sm-12 mt30-xs">
+                    <p class="text-small mt50 no-margin-bottom">Here you find all your tags, can open the github or delete tags:</p>
 
-                $i=1;
-                if($res) {
+ <?php
 
-                    echo '<h4>Your current tags</h4>';
+                    echo '';
 
-                    while ($row = $res->fetch_assoc()) {
+                    echo '
+                    <div>';
 
-                        $tags = explode(",", $row['tags']);
+                    //var_dump($res);
 
-                        echo '
-                        <div style="float: left; padding-right: 1rem; padding-top: 0.5rem; width: 100%"><hr/>';
+                    $i=1;
+                    if($res) {
 
-                        foreach ($tags as $tag) {
-                            echo '<span class="badge badge-info">' . $tag . '</span> ';
-                        }
-                          echo '
-                          <button type="button" class="btn-sm btn_del" data-id="'.$row['id'].'" style="float:right;margin-left: 1rem;"><i class="fas fa-trash"></i> delete</button> 
-                          <a href="'.$row['url'].'" target="_blank" style="float:right;"><button type="button" class="btn-sm"><i class="fas fa-external-link-alt"></i> open</button></a>
+                        while ($row = $res->fetch_assoc()) {
+
+                            $tags = explode(",", $row['tags']);
+
+                            echo '
+                        <div style="float: left; padding-right: 1rem; padding-top: 0.5rem; width: 100%"><hr class="bottomReveal" data-sr-id="1" style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0.05s, opacity 1.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0.05s; transition: transform 1.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0.05s, opacity 1.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0.05s; ">';
+
+                            foreach ($tags as $tag) {
+                                echo '<span class="label label-primary">' . $tag . '</span> ';
+                            }
+                            echo '
+                          <button type="button" class="btn btn-primary btn-sm btn_del" data-id="'.$row['id'].'" style="float:right;margin-left: 1rem;"><i class="fas fa-trash"></i> delete</button> 
+                          <a href="'.$row['url'].'" target="_blank" style="float:right;"><button type="button" class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt"></i> open</button></a>
                         </div>';
 
+                        }
                     }
-                }
 
-                ?>
+                    ?>
+                </div>
+
+
+                </div><!-- /.column -->
+            </div><!-- /.row -->
+            <div class="row">
+                <div class="col-sm-12">
+                    &nbsp;
+                </div>
+            </div>
+        </div><!-- /.container -->
+
+
+</section><!-- /.section -->
+<!-- End Intro -->
+
+<!-- Begin Contact -->
+<section id="contact" class="background2 section-padding">
+    <div class="container">
+        <div class="row mb30">
+            <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 section-title text-center">
+                <h2>Contact</h2>
+                <span class="section-divider mb15"></span>
+                <p class="no-margin scaleReveal">info@gittager.com</p>
+            </div><!-- /.column -->
+        </div><!-- /.row -->
+
+    </div><!-- /.container -->
+</section><!-- /.section -->
+<!-- End Contact -->
+
+<!-- Begin Map
+<div id="map"></div>
+ End Map -->
+
+<!-- Begin Footer -->
+<footer class="footer-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <a href="http://codedoor.org/imprint.html">imprint</a> -
+                <a href="http://codedoor.org/">about us</a>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-12 text-center">
-                &nbsp;
-            </div>
-        </div>
-    </div>
-</section>
+            <div class="col-sm-8 col-sm-offset-2 text-small text-center">
+                <hr>
+                <button type="button" class="btn btn-primary btn-up-footer btn-sm scroll-top">Up</button>
+                <p class="no-margin">&copy; CodeDoor.org</p>
+            </div><!-- /.column -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</footer><!-- /.footer -->
+<!-- Begin Footer -->
 
+<!-- Javascript Files -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArLNT3t4qsJEBmR0R9P_6ueLIQz0Jvt1M&callback=initMap" async defer></script>
+<script type="text/javascript">
+    /* ---- Google Maps ---- */
+    function initMap() {
+        var mapOptions = {
+            zoom: 15,
+            zoomControl: false,
+            scaleControl: false,
+            scrollwheel: false,
+            disableDoubleClickZoom: true,
+            center: new google.maps.LatLng(40.6700, -73.9400), // New York
+            styles: [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]
+        };
+        var mapElement = document.getElementById('map');
+        var map = new google.maps.Map(mapElement, mapOptions);
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(40.6700, -73.9400),
+            map: map,
+            title: 'Our Office!'
+        });
+    }
+</script>
+<script type="text/javascript" src="js/particles.min.js"></script>
+<script type="text/javascript" src="js/particlesRun.js"></script>
+<script type="text/javascript" src="js/jquery.mixitup.js"></script>
+<script type="text/javascript" src="js/form-validator.min.js"></script>
+<script type="text/javascript" src="js/jquery.inview.min.js"></script>
+<script type="text/javascript" src="js/jquery.countTo.js"></script>
+<script type="text/javascript">
+    /* ---- Counter (our count) ---- */
+    $('#ourcount').one('inview', function(event, isInView) {
+        if (isInView) {
+            $('.timer').countTo({speed: 3000});
+        }
+    });
 
-<?php include('views/footer.php');?>
-
-<!-- Custom JavaScript for this theme -->
-<script src="js/tagit.js"></script>
-
+    $("#bmcopy").click(function(){
+        $("#bookmarklettext").select();
+        document.execCommand('copy');
+        $('#bmcopy').tooltip('show');
+    });
+</script>
+<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript" src="js/scrollreveal.min.js"></script>
+<script type="text/javascript" src="js/style-switcher.js"></script><!-- Remove for production -->
+<script type="text/javascript" src="js/main.js"></script>
+<textarea id="bookmarklettext" style="position: absolute; left: -9999px;">javascript: link="http://www.gittager.com/tagit.php?permalink=" + document.getElementById('js-copy-permalink').value.replace("#", "***") + "&titel=" + document.querySelector("meta[property='og:title']").getAttribute("content"); meinpopup=open(link,'_blank','width=605,height=555'); meinpopup.focus(); void(0);</textarea>
 </body>
 </html>

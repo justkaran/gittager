@@ -4,8 +4,8 @@ if(isset($accessToken)){
 
     if(!empty($_SESSION['userData'])){
         // Render Github Login / Logout Button
-        $output = '<a href="logout.php"><button type="button" class="btn-lg">Logout <i class="fas fa-sign-out-alt" style="padding-left: 0.5rem; font-size: 1.5rem; line-height: 2rem; vertical-align: sub;"></i></button></a>';
-        $output1 = '<a href="logout.php"><button type="button" class="btn-sm">Logout <i class="fas fa-sign-out-alt"></i></button></a>';
+        $output = '<a href="logout.php"><button type="button" class="btn btn-primary btn-lg">Logout <span class="ion-log-out"></span></button></a>';
+        $output1 = '<a href="logout.php"><button type="button" class="btn btn-primary btn-sm">Logout <span class="ion-log-out"></span></button></a>';
     }else{
         $output = '<h3 style="color:red">Some problem occurred, please try again.</h3>';
     }
@@ -33,7 +33,7 @@ if(isset($accessToken)){
     $loginURL = $gitClient->getAuthorizeURL($_SESSION['state']);
 
     // Render Github Login / Logout Button
-    $output = '<a href="'.htmlspecialchars($loginURL).'"><button type="button" class="btn-lg"><i class="fab fa-github" style="padding-right: 0.5rem; font-size: 1.5rem; line-height: 2rem; vertical-align: sub;"></i> Login with Github</button></a>';
-    $output1 = '<a href="'.htmlspecialchars($loginURL).'"><button type="button" class="btn-sm"><i class="fab fa-github"></i> Login with Github</button></a>';
+    $output = '<a href="'.htmlspecialchars($loginURL).'"><button type="button" class="btn btn-primary btn-lg"><span class="ion-social-github"></span> Sign in with Github</button></a>';
+    $output1 = '<a href="'.htmlspecialchars($loginURL).'"><button type="button" class="btn btn-primary btn-sm"><span class="ion-social-github"></span> Sign in with Github</button></a>';
 }
 ?>
